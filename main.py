@@ -1,4 +1,4 @@
-import random
+meimport random
 import string
 import os
    
@@ -61,7 +61,7 @@ def send_funnyvideo(message):
 
 @bot.message_handler(commands=['commands'])
 def send_commands(message):
-        bot.reply_to(message, "Команды: hello, heh, bye, ihateyou, proveyorereal, genpassword, genemoji, mem, info, funnyvideo, angrybirds")
+        bot.reply_to(message, "Команды: hello, heh, bye, ihateyou, proveyorereal, genpassword, genemoji, mem, info, funnyvideo, angrybirds, ecomeme")
 
 @bot.message_handler(commands=['bye'])
 def send_bye(message):
