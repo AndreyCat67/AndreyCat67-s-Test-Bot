@@ -30,6 +30,14 @@ def send_mem(message):
         img_name = random.choice(images) 
         with open(f'images/{img_name}', 'rb') as f:
                 
+                bot.send_photo(message.chat.id, f)
+@bot.message_handler(commands=['ecomeme'])
+def send_ecomeme(message):
+    # А вот так можно подставить имя файла из переменной
+        ecologymemes = os.listdir('ecologymemes')
+        eco_name = random.choice(ecologymemes) 
+        with open(f'ecologymemes/{eco_name}', 'rb') as f:
+                
                 bot.send_photo(message.chat.id, f) 
 @bot.message_handler(commands=['angrybirds'])
 def send_mem(message):
