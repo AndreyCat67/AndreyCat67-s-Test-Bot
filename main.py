@@ -1,4 +1,4 @@
-meimport random
+import random
 import string
 import os
    
@@ -11,15 +11,21 @@ bot = telebot.TeleBot("7652710129:AAErvRyjYwa0nFuy33kCM2ip-JiOsc5htGA")
 @bot.message_handler(commands=['start', 'hello'])
 def send_welcome(message):
         bot.reply_to(message, f'Привет! Я бот {bot.get_me().first_name}! Пожалуйста введи команду commands.')
-
+@bot.message_handler(commands=['math'])
+def send_math(message):
+    # А вот так можно подставить имя файла из переменной
+        math = os.listdir('math')
+        math_name = random.choice(math) 
+        with open(f'math/{math_name}', 'rb') as f:
+                bot.send_photo(message.chat.id, f)
 @bot.message_handler(commands=['heh'])
 def send_heh(message):
         count_heh = int(message.text.split()[1]) if len(message.text.split()) > 1 else 5
         bot.reply_to(message, "he" * count_heh)
            # Обработчик команды '/start' и '/hello'
+                
 
-
-bot.message_handler(commands=['proveyourereal'])
+@bot.message_handler(commands=['proveyourereal'])
 def send_proveyourereal(message):
         bot.reply_to(message, "Я настоящий. Повернись.")
 
