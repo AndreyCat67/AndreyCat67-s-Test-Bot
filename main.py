@@ -7,7 +7,7 @@ from bot_logic import emoji_pass
 import telebot
 print(os.listdir('images'))
  # Инициализация бота с использованием его токена
-bot = telebot.TeleBot("7652710129:AAErvRyjYwa0nFuy33kCM2ip-JiOsc5htGA")
+bot = telebot.TeleBot("")
 @bot.message_handler(commands=['start', 'hello'])
 def send_welcome(message):
         bot.reply_to(message, f'Привет! Я бот {bot.get_me().first_name}! Пожалуйста введи команду commands.')
