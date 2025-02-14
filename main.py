@@ -7,10 +7,10 @@ from bot_logic import emoji_pass
 import telebot
 print(os.listdir('images'))
  # Инициализация бота с использованием его токена
-bot = telebot.TeleBot("")
+bot = telebot.TeleBot("7652710129:AAErvRyjYwa0nFuy33kCM2ip-JiOsc5htGA")
 @bot.message_handler(commands=['start', 'hello'])
 def send_welcome(message):
-        bot.reply_to(message, f'Привет! Я бот {bot.get_me().first_name}! Пожалуйста введи команду commands.')
+        bot.reply_to(message, f'Hey there! I'm {bot.get_me().first_name}! Please type /commands!')
 @bot.message_handler(commands=['math'])
 def send_math(message):
     # А вот так можно подставить имя файла из переменной
@@ -27,7 +27,7 @@ def send_heh(message):
 
 @bot.message_handler(commands=['proveyourereal'])
 def send_proveyourereal(message):
-        bot.reply_to(message, "Я настоящий. Повернись.")
+        bot.reply_to(message, "I'm real. Turn around.")
 
 @bot.message_handler(commands=['mem'])
 def send_mem(message):
@@ -55,23 +55,23 @@ def send_mem(message):
                 bot.send_photo(message.chat.id, f)
 @bot.message_handler(commands=['ihateyou'])
 def send_ihateyou(message):
-        bot.reply_to(message, "Это было очень грубо!")
+        bot.reply_to(message, "That was very rude!")
 
 @bot.message_handler(commands=['info'])
 def send_info(message):
-        bot.reply_to(message, "Я являюсь тестовым ботом студента из школы Kodland!")
+        bot.reply_to(message, "I'm a test bot created by a Kodland student!")
 
 @bot.message_handler(commands=['funnyvideo'])
 def send_funnyvideo(message):
-        bot.reply_to(message, "Если хочешь посмеятся, посмотри https://www.youtube.com/watch?v=hNTiJ5QEhl0&t=3")
+        bot.reply_to(message, "If you want a good laugh, watch this: https://www.youtube.com/watch?v=hNTiJ5QEhl0&t=3")
 
 @bot.message_handler(commands=['commands'])
 def send_commands(message):
-        bot.reply_to(message, "Команды: hello, heh, bye, ihateyou, proveyorereal, genpassword, genemoji, mem, info, funnyvideo, angrybirds, ecomeme")
+        bot.reply_to(message, "Commands: hello, heh, bye, ihateyou, proveyorereal, genpassword, genemoji, mem, info, funnyvideo, angrybirds, ecomeme")
 
 @bot.message_handler(commands=['bye'])
 def send_bye(message):
-        bot.reply_to(message, "Пока!")
+        bot.reply_to(message, "Bye!")
     
 @bot.message_handler(commands=['genpassword'])
 def send_genpassword(message):
